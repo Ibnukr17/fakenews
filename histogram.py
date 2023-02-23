@@ -11,11 +11,14 @@ def compute_similarity(histogram1, histogram2):
     similarity = cv2.compareHist(histogram1, histogram2, cv2.HISTCMP_CORREL)
     return similarity
 
+# Minta pengguna memasukkan nama file gambar yang ingin dibandingkan
+filename = input("Masukkan nama file gambar yang ingin dibandingkan: ")
+
 # Baca gambar yang ingin dibandingkan
-image1 = cv2.imread("alphard.jpg")
+image1 = cv2.imread(filename)
 
 # Daftar pembanding
-pembanding = ["alphardhitam.jpg", "duapalhard.jpg", "alphard.jpg"]
+pembanding = ["alphardhitam.jpg", "duapalhard.jpg", "alphard.jpg", "res.png"]
 
 # Dictionary untuk menyimpan nilai similarity setiap pembanding
 similarities = {}
